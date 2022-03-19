@@ -1,8 +1,9 @@
+var randomNum = Math.floor(Math.random() * 30);
 const URL = "https://rickandmortyapi.com/api/character/"
 
 export async function getCharactersApi(){
     try {
-        const request = await fetch(`${URL}`);
+        const request = await fetch(`${URL}?page=${randomNum}`);
         const response = await request.json();
         return response.results;
     } catch (err) {
